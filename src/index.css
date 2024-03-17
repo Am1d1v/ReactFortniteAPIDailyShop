@@ -22,6 +22,27 @@ nav {
     flex-grow: 1;
 }
 
+.cart {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    font-size: 30px;
+    z-index: 10;
+    padding: 1rem;
+}
+
+.cart i {
+    font-size: 30px;
+}
+
+@media (min-width: 767px){
+    .cart {
+        top: 5rem;
+        bottom: unset;
+    }
+}
+
 .cart-quantity {
-    
+
 }

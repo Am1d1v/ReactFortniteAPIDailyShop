@@ -13,6 +13,9 @@ function Shop() {
   // Loading state
   const [loading, setLoading] = useState(true);
 
+  // Order List. List of ordered goods.
+  const [order, setOrder] = useState([]);
+
   // Fetch goods data
   useEffect(() => {
     fetch(API_URL, {
@@ -31,6 +34,7 @@ function Shop() {
 
   return (
     <main className="container content">
+      <Cart quantity={order.length}/>
       { loading ? <Preloader /> : <GoodsList goods={goods} />}
     </main>
   )
