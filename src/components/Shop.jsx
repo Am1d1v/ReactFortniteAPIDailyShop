@@ -1,6 +1,6 @@
 import {API_KEY, API_URL} from '../config'
 import { useState, useEffect } from 'react';
-
+import Preloader from './Preloader'
 
 function Shop() {
 
@@ -10,6 +10,7 @@ function Shop() {
   // Loading state
   const [loading, setLoading] = useState(true);
 
+  // Fetch goods data
   useEffect(() => {
     fetch(API_URL, {
       headers: {
@@ -26,7 +27,9 @@ function Shop() {
   
 
   return (
-    <main className="container content">{goods.map((good) => <h1>{good.name}</h1>)}</main>
+    <main className="container content">
+      { loading ? <Preloader /> : goods.map((good) => <h1>{good.name}</h1>)}
+    </main>
   )
 }
 
