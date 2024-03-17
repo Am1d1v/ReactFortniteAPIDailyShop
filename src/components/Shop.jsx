@@ -16,6 +16,33 @@ function Shop() {
   // Order List. List of ordered goods.
   const [order, setOrder] = useState([]);
 
+  // Add to Cart
+  const addToCart = (item) => {
+
+    const itemIndex = order.findIndex(orderItem => orderItem.id === item.id)
+
+    // Add the iten to the cart for the first time
+    if(itemIndex < 0){
+      const newItem = {
+        ...item,
+        quantity: 1
+      }
+      setOrder([...order, newItem])
+    } else {
+      const newOrder = order.map((orderItem, index) => {
+        if(index === itemIndex){
+          return {
+            ...orderItem,
+            quantity: orderItem.quantity + 1
+          }
+        } else {
+          return item;
+        }
+      })
+    }
+
+  }
+
   // Fetch goods data
   useEffect(() => {
     fetch(API_URL, {
