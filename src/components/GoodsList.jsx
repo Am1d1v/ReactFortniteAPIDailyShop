@@ -3,7 +3,7 @@ import GoodsItem from './GoodsItem';
 
 function GoodsList(props) {
 
-  const {goods = []} = props;
+  const {goods = [], addToCart} = props;
 
   // If we didnt get goods data
   if (!goods.length){
@@ -12,7 +12,7 @@ function GoodsList(props) {
 
   return (
     <div className="goods">
-      {goods.map((good) => <GoodsItem key={good.id} {...good}/>)}
+      {goods.map((good) => <GoodsItem key={good.id} {...good}  addToCart={addToCart}/>)}
     </div>
   )
 }

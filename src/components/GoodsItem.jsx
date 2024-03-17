@@ -2,11 +2,11 @@ import React from 'react'
 
 function GoodsItem(props) {
 
-    const {id, name, description, price, full_background} = props;
+    const {id, name, description, price, full_background, addToCart} = props;
 
   return (
     <>
-     <div className="card" id={id}>
+     <div className="card">
 
         <div className="card-image">
           <img src={full_background} alt={name}/> 
@@ -18,7 +18,7 @@ function GoodsItem(props) {
         </div>
 
         <div className="card-action">
-          <button className='btn'>Купить</button>
+          <button className='btn' onClick={() => addToCart({id, name, price})}>Купить</button>
           <span className='right' style={{fontSize: '20px'}}>{price} credits</span>
         </div>
 

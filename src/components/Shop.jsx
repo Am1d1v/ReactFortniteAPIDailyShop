@@ -21,7 +21,7 @@ function Shop() {
 
     const itemIndex = order.findIndex(orderItem => orderItem.id === item.id)
 
-    // Add the iten to the cart for the first time
+    // Add the item to the cart for the first time
     if(itemIndex < 0){
       const newItem = {
         ...item,
@@ -39,6 +39,9 @@ function Shop() {
           return item;
         }
       })
+
+      setOrder(newOrder)
+
     }
 
   }
@@ -62,7 +65,7 @@ function Shop() {
   return (
     <main className="container content">
       <Cart quantity={order.length}/>
-      { loading ? <Preloader /> : <GoodsList goods={goods} />}
+      { loading ? <Preloader /> : <GoodsList goods={goods} addToCart={addToCart}/>}
     </main>
   )
 }
