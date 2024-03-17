@@ -2,6 +2,8 @@ import {API_KEY, API_URL} from '../config'
 import { useState, useEffect } from 'react';
 import Preloader from './Preloader'
 import GoodsList from './GoodsList';
+import Cart from './Cart';
+
 
 function Shop() {
 
