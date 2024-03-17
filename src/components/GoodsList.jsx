@@ -12,7 +12,7 @@ function GoodsList(props) {
 
   return (
     <div className="goods">
-      {goods.map((good) => <GoodsItem {...good}/>)}
+      {goods.map((good) => <GoodsItem key={good.id} {...good}/>)}
     </div>
   )
 }
