@@ -1,6 +1,7 @@
 import {API_KEY, API_URL} from '../config'
 import { useState, useEffect } from 'react';
 import Preloader from './Preloader'
+import GoodsList from './GoodsList';
 
 function Shop() {
 
@@ -28,7 +29,7 @@ function Shop() {
 
   return (
     <main className="container content">
-      { loading ? <Preloader /> : goods.map((good) => <h1>{good.name}</h1>)}
+      { loading ? <Preloader /> : <GoodsList goods={goods} />}
     </main>
   )
 }
