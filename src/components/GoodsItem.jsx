@@ -6,17 +6,20 @@ function GoodsItem(props) {
 
   return (
     <>
-     <div class="card">
+     <div className="card">
 
-        <div class="card-image">
-          <img src={full_background} />
-          <span class="card-title">{name}</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        <div className="card-image">
+          <img src={full_background} alt={name}/> 
+          <span className="card-title">{name}</span>
         </div>
 
-        <div class="card-content">
+        <div className="card-content">
           <p>{description}</p>
           <p>{price}</p>
+        </div>
+
+        <div className="card-action">
+          <button className='btn'>Купить</button>
         </div>
 
     </div>
