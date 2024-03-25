@@ -7,6 +7,7 @@ import Cart from './Cart';
 
 function Shop() {
 
+
   // Initial Goods Array
   const [goods, setGoods] = useState([]);
 
